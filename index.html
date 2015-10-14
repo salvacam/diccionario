@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8" />	
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Diccionario Español - Ingles</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" href="css/estilos.css" />
+	
+	<script src="js/angular.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+
+<body>
+
+	<div class="container-fluid" id="main" ng-app="traslate" ng-controller="miappCtrl">
+		<div class="row">  
+			<div class="text-left col-sm-5 col-md-5">			
+				<label for="espanol" class="text-center "><h2>Español</h2></label>
+				<input type="text" value="{{espanol}}" id="espanol" name="espanol" class="form-control input-lg" 
+					data-ng-model="espanol" data-ng-click="limpia_esp()" data-ng-change="limpia_eng()">
+			</div>
+			<div class="text-center col-sm-1 col-md-1" id="submit">	
+				<button type="button" class=" btn btn-primary btn-lg" 
+					data-ng-class="disabled" data-ng-click="traduce()">
+					<span class="glyphicon glyphicon-refresh" data-ng-class="spin" aria-hidden="true"></span>
+				</button>
+			</div>
+			<div class="text-right col-sm-5 col-md-5">			
+				<label for="ingles" class="text-center"><h2>Ingles</h2></label>
+				<input type="text" value="{{ingles}}" id="ingles" name="ingles" class="form-control input-lg" 
+					data-ng-model="ingles" data-ng-click="limpia_eng()" data-ng-change="limpia_esp()">
+			</div>        		
+		</div>
+	</div>
+
+</body>
+
+</html>
